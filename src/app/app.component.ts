@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { NavigationComponent } from './layout/navigation/navigation.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+    NavigationComponent,
   ],
 })
 export class AppComponent {

@@ -1,10 +1,12 @@
 .navbar {
     margin-bottom: 20px;
+    display: flex;
+    height: 75px;
+    align-items: center;
 }
 
 .navbar-toggler {
     background: none;
     border: none;
     font-size: 20px;
-    cursor: pointer;
 }

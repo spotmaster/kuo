@@ -1,7 +1,19 @@
 <app-header [ngClass]="{ 'header-expanded': !isSidebarOpen, 'header-collapsed': isSidebarOpen }"
-    [isSidebarOpen]="isSidebarOpen" (toggleSidebar)="toggleSidebar()"></app-header>
+    [isSidebarOpen]="isSidebarOpen" (toggleSidebar)="toggleSidebar()">
+</app-header>
+
 <app-sidebar [isSidebarOpen]=" isSidebarOpen " (toggleSidebar)=" toggleSidebar() "></app-sidebar>
-<div class=" content " [class.content-expanded]=" !isSidebarOpen ">
-    <router-outlet></router-outlet>
+
+<div class=" navtigation " [class.content-expanded]=" !isSidebarOpen">
+    <app-navigation></app-navigation>
 </div>
+<div class=" content " [class.content-expanded]=" !isSidebarOpen ">
+
+
+    <router-outlet>
+
+    </router-outlet>
+
+</div>
+
 <app-footer></app-footer>

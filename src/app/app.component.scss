@@ -21,3 +21,11 @@ app-header {
         margin-left: 80px;
     }
 }
+
+.navtigation {
+    margin-left: 250px;
+    transition: margin-left 0.3s;
+    &.content-expanded {
+        margin-left: 80px;
+    }
+}
