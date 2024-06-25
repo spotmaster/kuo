@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { trigger } from '@angular/animations';
+import { navbarData } from './sidebar-data';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,10 +11,20 @@ import { trigger } from '@angular/animations';
   imports: [CommonModule],
 })
 export class SidebarComponent {
+  navData = navbarData;
+
   @Input() isSidebarOpen: boolean = true;
   @Output() toggleSidebar = new EventEmitter<void>();
 
   onToggleSidebar() {
     this.toggleSidebar.emit();
+  }
+
+  onMouseOver() {
+    this.isSidebarOpen = true;
+  }
+
+  onMouseLeave() {
+    this.isSidebarOpen = false;
   }
 }

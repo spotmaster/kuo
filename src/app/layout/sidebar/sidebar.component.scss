@@ -49,7 +49,7 @@
     }
     &.open {
         .icon {
-            font-size: 5rem; // İkon boyutunu artırmak için
+            font-size: 1.5rem;
         }
         a {
             font-size: 1.1rem; // Yazı boyutunu artırmak için
@@ -67,10 +67,8 @@
         li {
             a {
                 display: flex;
-                align-items: center;
                 padding: 15px 20px;
                 color: #343a40;
-                text-decoration: none;
                 .icon {
                     margin-right: 10px;
                     font-size: 1rem;
@@ -85,5 +83,18 @@
                 color: #7571f9;
             }
         }
+    }
+}
+
+.active-link {
+    background-color: #007bff; // Aktif linkin arka plan rengini belirleyin
+    color: white; // Yazı rengini beyaz yapın
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        background-color: #0056b3; // Hover efekti için arka plan rengi
     }
 }

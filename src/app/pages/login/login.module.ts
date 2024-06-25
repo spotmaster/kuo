@@ -6,10 +6,6 @@ import { LoginComponent } from './login.component';
 const routes: Routes = [{ path: '', component: LoginComponent }];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    LoginComponent, // Standalone bileşeni import edin
-  ],
+  imports: [CommonModule, RouterModule.forChild(routes), LoginComponent],
 })
 export class LoginModule {}
