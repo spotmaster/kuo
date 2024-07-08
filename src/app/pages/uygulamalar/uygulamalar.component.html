@@ -1,1 +1,48 @@
-<p>uygulamalar works!</p>
+<div class="d-flex mb-3 align-items-center">
+    <input type="text" class="form-control" placeholder="Tüm tablo içerisinde arama yapın..."
+        (input)="applyFilter($event, 'global')" style="flex: 1 1 auto; margin-right: 10px;">
+    <button type="button" class="btn" [ngClass]="isShowingActive ? 'btn-success' : 'btn-danger'"
+        (click)="toggleActiveFilter()" style="flex: 0 0 auto;">
+        {{ isShowingActive ? 'Aktif Uygulamalar' : 'Pasif Uygulamalar' }}
+    </button>
+    <button type="button" class="btn btn-info ms-2" style="flex: 0 0 auto;">Yeni Uygulama Ekle</button>
+</div>
+
+<p-table #dt [value]="applications" [paginator]="true" [rows]="10"
+    currentPageReportTemplate="{totalRecords} kayıt arasından {first} ile {last} arasındaki kayıtları görüntülüyorsunuz."
+    [showCurrentPageReport]="true" [sortMode]="'multiple'"
+    [globalFilterFields]="['id', 'team', 'name', 'description', 'link', 'operation', 'domain', 'vendor', 'solution', 'business']">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>id</th>
+            <th>Ekip</th>
+            <th style="width: 200px;">Uygulama Adı</th>
+            <th style="width: 620px;">Uygulama Açıklaması</th>
+            <th style="width: 300px;">Uygulama linki</th>
+            <th style="width: 100px;">Operation</th>
+            <th style="width: 100px;">Domain</th>
+            <th style="width: 150px;">Firma Bilgisi</th>
+            <th style="width: 200px;">Çözüm Kontağı</th>
+            <th>İş birimi</th>
+            <th>Aksiyon</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-application>
+        <tr>
+            <td>{{ application.id }}</td>
+            <td>{{ getTeamName(application.team) }}</td>
+            <td>{{ application.name }}</td>
+            <td>{{ application.description }}</td>
+            <td><a [href]="application.link" target="_blank">{{ application.link }}</a></td>
+            <td>{{ application.operation }}</td>
+            <td>{{ application.domain }}</td>
+            <td>{{ application.vendor }}</td>
+            <td>{{ application.solution }}</td>
+            <td>{{ application.business }}</td>
+            <td>
+                <i class="bi bi-pen text-warning mx-2"></i>
+                <i class="bi bi-trash text-danger mx-2"></i>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

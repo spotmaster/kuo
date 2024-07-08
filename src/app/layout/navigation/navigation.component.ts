@@ -8,8 +8,6 @@ import { RouterModule } from '@angular/router';
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
 })
 export class NavigationComponent {
   breadcrumbs$: Observable<any[]>;

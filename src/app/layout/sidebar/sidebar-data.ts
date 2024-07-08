@@ -6,22 +6,32 @@ export const navbarData = [
   },
   {
     routeLink: 'uygulamalar',
-    icon: 'fal fa-window-maximize',
-    label: 'Uygulamalar',
-  },
-  {
-    routeLink: 'uygulama-detay',
-    icon: 'fal fa-server',
-    label: 'Uygulama Detay',
+    icon: 'fa fa-list-alt',
+    label: 'Uygulama Listesi',
   },
   {
     routeLink: 'envanter',
-    icon: 'fal fa-briefcase',
-    label: 'Envanter',
+    icon: 'fa fa-briefcase',
+    label: 'Uygulama Envanteri',
   },
   {
-    routeLink: 'destek',
+    routeLink: 'monitoring',
+    icon: 'fa fa-eye',
+    label: 'Monitoring & Alarm',
+  },
+  {
+    routeLink: 'yardim',
     icon: 'fa fa-handshake',
     label: 'Destek',
+  },
+  {
+    routeLink: 'ekipler',
+    icon: 'fa fa-users',
+    label: 'Takımlar',
+  },
+  {
+    routeLink: 'kanban',
+    icon: 'fa fa-database ',
+    label: 'Kanban Board',
   },
 ];

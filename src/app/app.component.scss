@@ -1,31 +1,76 @@
-app-header {
+$sidenav-width-open: 250px;
+$sidenav-width-closed: 80px;
+$footer-height: 50px;
+.main-container {
+    position: relative;
+    transition: left 0.3s ease, width 0.3s ease;
+    &.expanded {
+        left: $sidenav-width-open;
+        width: calc(100% - #{$sidenav-width-open});
+    }
+    &.collapsed {
+        left: $sidenav-width-closed;
+        width: calc(100% - #{$sidenav-width-closed});
+    }
+    .header {
+        height: 75px; // Örnek yükseklik
+        background-color: #f8f9fa; // Örnek arka plan rengi
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Örnek gölge
+        transition: left 0.3s ease, width 0.3s ease;
+        &.expanded {
+            left: $sidenav-width-open;
+            width: calc(100% - #{$sidenav-width-open});
+        }
+        &.collapsed {
+            left: $sidenav-width-closed;
+            width: calc(100% - #{$sidenav-width-closed});
+        }
+    }
+    .navigation {
+        height: 50px;
+        width: 100%;
+        background-color: #f8f9fa; // Örnek arka plan rengi
+        transition: left 0.3s ease, width 0.3s ease;
+        &.expanded {
+            left: $sidenav-width-open;
+            width: calc(100% - #{$sidenav-width-open});
+        }
+        &.collapsed {
+            left: $sidenav-width-closed;
+            width: calc(100% - #{$sidenav-width-closed});
+        }
+    }
+    .main-content {
+        padding: 20px; // Örnek padding
+        background-color: #ffffff; // Örnek arka plan rengi
+        transition: left 0.3s ease, width 0.3s ease;
+        &.expanded {
+            left: $sidenav-width-open;
+            width: calc(100% - #{$sidenav-width-open});
+        }
+        &.collapsed {
+            left: $sidenav-width-closed;
+            width: calc(100% - #{$sidenav-width-closed});
+        }
+    }
+    .footer {
+        background-color: #f8f9fa; // Örnek arka plan rengi
+        transition: left 0.3s ease, width 0.3s ease;
+        margin-top: auto; // Footer'ı en alt pozisyona getir
+        line-height: $footer-height; // Örnek dikey hizalama
+        height: $footer-height;
+        &.expanded {
+            left: $sidenav-width-open;
+            width: calc(100% - #{$sidenav-width-open});
+        }
+        &.collapsed {
+            left: $sidenav-width-closed;
+            width: calc(100% - #{$sidenav-width-closed});
+        }
+    }
+}
+
+.sidebar {
     position: fixed;
-    top: 0;
-    transition: left 0.3s, width 0.3s;
-    z-index: 1000;
-    &.header-expanded {
-        left: 80px;
-        width: calc(100% - 80px);
-    }
-    &.header-collapsed {
-        left: 250px;
-        width: calc(100% - 250px);
-    }
-}
-
-.content {
-    margin-top: 56px;
-    margin-left: 250px;
-    transition: margin-left 0.3s;
-    &.content-expanded {
-        margin-left: 80px;
-    }
-}
-
-.navtigation {
-    margin-left: 250px;
-    transition: margin-left 0.3s;
-    &.content-expanded {
-        margin-left: 80px;
-    }
+    height: 100%;
 }

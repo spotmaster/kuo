@@ -1,1 +1,84 @@
-<p>dashboard works!</p>
+<div class="card-container">
+    <div class="card-custom bg-orange">
+        <div class="card-content">
+            <h3>3</h3>
+            <p>Toplam ekip sayısı</p>
+        </div>
+        <div class="icon">
+            <i class="fas fa-users"></i>
+        </div>
+    </div>
+
+    <div class="card-custom bg-cyan">
+        <div class="card-content">
+            <h3>120</h3>
+            <p>Toplam uygulama sayısı</p>
+        </div>
+        <div class="icon">
+            <i class="fas fa-building"></i>
+        </div>
+    </div>
+
+    <div class="card-custom bg-navy">
+        <div class="card-content">
+            <h3>451</h3>
+            <p>Toplam Envanter Girişi</p>
+        </div>
+        <div class="icon">
+            <i class="fas fa-briefcase"></i>
+        </div>
+    </div>
+
+    <div class="card-custom bg-green">
+        <div class="card-content">
+            <h3>105</h3>
+            <p>Toplam Yardım Sayısı</p>
+        </div>
+        <div class="icon">
+            <i class="fas fa-ambulance"></i>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white border-bottom-0">
+                    Ekip bazlı tanımlı uygulama sayısı
+                </div>
+                <div class="card-body p-0">
+                    <div class="chart-container" style="position: relative; height:40vh; width:100%">
+                        <canvas #doughnutChart></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white border-bottom-0">
+                    Ekip bazlı uygulama trendi
+                </div>
+                <div class="card-body p-0">
+                    <div class="chart-container" style="position: relative; height:40vh; width:100%">
+                        <canvas #lineChart></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card p-3" style="width: 15rem; ">
+    <div class="card-body">
+        <h5 class="card-title ">Card title</h5>
+        <p class="card-text ">Kurumsal Risk, İç Kontrol, İş Sürekliliği ve İç Denetim ile birlikte Regülasyon
+            UyumDirektörlüğü faaliyetlerinin şirketin tüm iş birimlerini de içine alacak şekilde yürütülmesi amacıyla
+            kullanılan web uygulamasıdır.
+        </p>
+        <div class="text-right">
+            <a href="#" class="btn btn-primary text-right">Detay</a>
+        </div>
+    </div>
+</div>

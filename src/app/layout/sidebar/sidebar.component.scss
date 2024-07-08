@@ -1,100 +1,98 @@
-.logo {
+$sidenav-width-open: 250px;
+$sidenav-width-closed: 80px;
+$sidenav-bg-color: #ffffff;
+$sidenav-hover-bg-color: #f5f7fa;
+$sidenav-border-color: #e0e0e0;
+$sidenav-text-color: #333333;
+$sidenav-hover-text-color: #3c99dc;
+$sidenav-section-title-color: #3c99dc;
+$sidenav-icon-color: #3c99dc;
+.logo-maxi {
     background-color: #7571f9;
-    padding: 15px;
-    text-align: center;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    width: $sidenav-width-open;
     height: 75px;
     width: 250px;
-    .logo-full {
-        color: #ffffff;
-        font-weight: bold;
-        font-size: 20px;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        width: 100%;
-    }
-    .logo-abbr {
-        color: #fff;
-        font-weight: bold;
-        font-size: 25px;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-    }
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 30px;
 }
 
-.sidebar {
-    width: 250px;
-    position: fixed;
-    top: 75px;
-    height: calc(100% - 56px);
-    z-index: 1000;
-    background: #f8f9fa;
-    color: #343a40;
-    transition: width 0.3s;
-    overflow-x: hidden;
-    &.closed {
-        width: 80px;
-        .icon {
-            font-size: 1.5rem;
-        }
-        a {
-            justify-content: center;
-        }
-    }
+.logo-mini {
+    background-color: #7571f9;
+    display: flex;
+    width: $sidenav-width-closed;
+    height: 100%;
+    height: 75px;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.sidenav {
+    width: $sidenav-width-closed;
+    background-color: $sidenav-bg-color;
+    border-right: 1px solid $sidenav-border-color;
+    overflow: hidden;
+    height: 100%;
     &.open {
-        .icon {
-            font-size: 1.5rem;
-        }
-        a {
-            font-size: 1.1rem; // Yazı boyutunu artırmak için
+        width: $sidenav-width-open;
+    }
+    &.closed {
+        width: $sidenav-width-closed;
+        .sidenav-link {
+            .sidenav-link-icon {
+                margin-right: 5px;
+                text-align: center;
+                width: 100%;
+            }
         }
     }
-    ul {
-        padding: 0;
+    .sidenav-item {
         list-style: none;
-        .menu-heading {
-            padding: 10px 15px;
-            color: #adb5bd;
-            text-transform: uppercase;
-            font-size: 12px;
-        }
-        li {
-            a {
-                display: flex;
-                padding: 15px 20px;
-                color: #343a40;
-                .icon {
-                    margin-right: 10px;
-                    font-size: 1rem;
-                }
-                &:hover {
-                    background: #e9ecef;
-                    color: #0056b3;
-                }
+        margin: 10px 0;
+        .sidenav-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 10px 10px 20px;
+            text-decoration: none;
+            color: $sidenav-text-color;
+            transition: left 0.3s ease, width 0.3s ease;
+            &:hover,
+            &.active {
+                background-color: $sidenav-hover-bg-color;
+                color: $sidenav-hover-text-color;
             }
-            .active {
-                background-color: #e9ecef;
-                color: #7571f9;
+            .sidenav-link-icon {
+                margin-right: 10px;
+                color: $sidenav-icon-color;
+                transition: left 0.3s ease, width 0.3s ease;
+            }
+            .sidenav-link-text {
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                flex-grow: 1;
             }
         }
     }
-}
-
-.active-link {
-    background-color: #007bff; // Aktif linkin arka plan rengini belirleyin
-    color: white; // Yazı rengini beyaz yapın
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    &:hover {
-        background-color: #0056b3; // Hover efekti için arka plan rengi
+    .sidenav-section-title {
+        margin-top: 10px;
+        text-align: center;
+        color: $sidenav-section-title-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.85rem;
     }
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
 }
